@@ -175,10 +175,10 @@ export function SideBarHeader(props: {
         className={`${styles["sidebar-header"]} ${
           shouldNarrow ? styles["sidebar-header-narrow"] : ""
         }`}
-        data-tauri-drag-region=""
+        data-tauri-drag-region
       >
         <div className={styles["sidebar-title-container"]}>
-          <div className={styles["sidebar-title"]} data-tauri-drag-region="">
+          <div className={styles["sidebar-title"]} data-tauri-drag-region>
             {title}
           </div>
           <div className={styles["sidebar-sub-title"]}>{subTitle}</div>
@@ -235,23 +235,24 @@ export function SideBar(props: { className?: string }) {
         title="DEV Chat"
         logo={<ChatGptIcon />}
         shouldNarrow={shouldNarrow}
-        subTitle="DEV API 公益项目 尊享版 "
+        subTitle={
+          <div>
+            <p> DEV API 公益项目 尊享版 </p>|{" "}
+            <a href="https://api.crond.dev/" className="link" target="_blank">
+              DEV API
+            </a>
+            | - |
+            <a href="https://webui.crond.dev/" className="link" target="_blank">
+              WEB UI
+            </a>
+            |<br />
+            前往 -&gt;
+            <a href="https://check.crond.dev/" className="link" target="_blank">
+              API CHECKER
+            </a>
+          </div>
+        }
       >
-        {/*<div>*/}
-        {/*  <p> DEV API 公益项目 尊享版 </p>|{" "}*/}
-        {/*  <a href="https://api.crond.dev/" className="link" target="_blank">*/}
-        {/*    DEV API*/}
-        {/*  </a>*/}
-        {/*  | - |*/}
-        {/*  <a href="https://webui.crond.dev/" className="link" target="_blank">*/}
-        {/*    WEB UI*/}
-        {/*  </a>*/}
-        {/*  |<br/>*/}
-        {/*  前往 -&gt;*/}
-        {/*  <a href="https://check.crond.dev/" className="link" target="_blank">*/}
-        {/*    API CHECKER*/}
-        {/*  </a>*/}
-        {/*</div>*/}
         <div className={styles["sidebar-header-bar"]}>
           <IconButton
             icon={<MaskIcon />}
