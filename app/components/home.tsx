@@ -29,7 +29,7 @@ import { AuthPage } from "./auth";
 import { getClientConfig } from "../config/client";
 import { type ClientApi, getClientApi } from "../client/api";
 import { useAccessStore } from "../store";
-
+import { Toast } from "./Toast";
 export function Loading(props: { noLogo?: boolean }) {
   return (
     <div className={styles["loading-content"] + " no-dark"}>
@@ -157,6 +157,7 @@ function Screen() {
   const isAuth = location.pathname === Path.Auth;
   const isSd = location.pathname === Path.Sd;
   const isSdNew = location.pathname === Path.SdNew;
+  //怎么添加自定义原生html js代码
 
   const isMobileScreen = useMobileScreen();
   const shouldTightBorder =
@@ -236,6 +237,7 @@ export function Home() {
 
   return (
     <ErrorBoundary>
+      <Toast />
       <Router>
         <Screen />
       </Router>

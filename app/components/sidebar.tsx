@@ -127,6 +127,7 @@ export function useDragSideBar() {
     shouldNarrow,
   };
 }
+
 export function SideBarContainer(props: {
   children: React.ReactNode;
   onDragStart: (e: MouseEvent) => void;
@@ -229,11 +230,28 @@ export function SideBar(props: { className?: string }) {
       shouldNarrow={shouldNarrow}
       {...props}
     >
+      {/*<div class="home_sidebar-header___NHg_" data-tauri-drag-region="true" style="display: flex; flex-direction: column; align-items: start;"><div class="home_sidebar-title__l3KhW" data-tauri-drag-region="true">V CHAT</div><div class="home_sidebar-sub-title__sbT6Z">V API 会员尊享 ( <a href="https://api.v3.cm/panel/topup" class="link" target="_blank">额度充值</a> )</div><div class="home_sidebar-sub-title__sbT6Z">需要更强功能请使用小伙伴的 <a href="https://u.tools/plugins/detail/ChatGPT.%E5%A5%BD%E5%8F%8B/" class="link" target="_blank">GPT插件版</a></div></div>*/}
       <SideBarHeader
         title="DEV Chat"
-        subTitle="DEV API会员尊享"
         logo={<ChatGptIcon />}
         shouldNarrow={shouldNarrow}
+        subTitle={
+          <div>
+            <p> DEV API 公益项目 尊享版 </p>|{" "}
+            <a href="https://api.crond.dev/" className="link" target="_blank">
+              DEV API
+            </a>
+            | - |
+            <a href="https://webui.crond.dev/" className="link" target="_blank">
+              WEB UI
+            </a>
+            |<br />
+            前往 -&gt;
+            <a href="https://check.crond.dev/" className="link" target="_blank">
+              API CHECKER
+            </a>
+          </div>
+        }
       >
         <div className={styles["sidebar-header-bar"]}>
           <IconButton

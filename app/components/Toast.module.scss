@@ -1,0 +1,77 @@
+.toast {
+  border-radius: 12px;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.2), 0 4px 14px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  width: 240px; /* 调小宽度 */
+  position: fixed;
+  top: 60px;
+  right: -300px; /* 初始位置在视口右侧外 */
+  animation: slideIn 0.5s forwards;
+  z-index: 9999; /* 设置较高的 z-index */
+  backdrop-filter: blur(80px);
+  background-color: rgba(255, 255, 255, 0.9); /* 调整背景透明度，增加可读性 */
+}
+
+.toast-inner {
+  padding: 15px; /* 减小内边距 */
+}
+
+.toast-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px; /* 减小间距 */
+}
+
+.toast-icon {
+  font-size: 20px; /* 调整图标大小 */
+  margin-right: 8px;
+}
+
+.toast-title {
+  flex: 1;
+  font-weight: bold;
+  font-size: 14px; /* 调整字体大小 */
+}
+
+.toast-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.toast-body {
+  margin-left: 28px; /* 调整左边距 */
+}
+
+.toast-body img {
+  width: 80px; /* 调整图片大小 */
+  margin-top: 8px;
+  margin-left: 30px;
+}
+
+.uptime-number {
+  color: rgb(56, 153, 253);
+  background-color: black;
+  border-radius: 5px;
+  padding: 2px 5px;
+  display: inline-block;
+  font-size: 12px; /* 调整字体大小 */
+}
+
+.uptime-icon {
+  color: #3db44c;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+@keyframes slideIn {
+  from {
+    right: -300px; /* 从右侧外部开始 */
+    opacity: 0;
+  }
+  to {
+    right: 20px; /* 滑入到右侧 20px 处 */
+    opacity: 1;
+  }
+}
