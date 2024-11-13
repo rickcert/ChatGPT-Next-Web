@@ -1395,6 +1395,9 @@ function _Chat() {
               );
               chatStore.currentSession().mask.modelConfig.model =
                 payload.model!;
+              accessStore.update(
+                (access) => (access.customModels = payload.model!),
+              );
             }
 
             if (payload.url) {
