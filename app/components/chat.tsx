@@ -1373,6 +1373,7 @@ function _Chat() {
         const payload = JSON.parse(text) as {
           key?: string;
           url?: string;
+          model?: string;
         };
 
         console.log("[Command] got settings from url: ", payload);
@@ -1388,6 +1389,14 @@ function _Chat() {
                 (access) => (access.openaiApiKey = payload.key!),
               );
             }
+            if (payload.model) {
+              accessStore.update(
+                (access) => (access.defaultModel = payload.model!),
+              );
+              chatStore.currentSession().mask.modelConfig.model =
+                payload.model!;
+            }
+
             if (payload.url) {
               accessStore.update((access) => (access.openaiUrl = payload.url!));
             }
